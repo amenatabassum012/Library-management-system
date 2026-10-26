@@ -1,0 +1,253 @@
+body { /* Styles the whole visible page */
+  font-family: Arial, sans-serif; /* Sets a clean, simple font */
+  margin: 0; /* Removes the default space around the page */
+  background-color: #f4f6f8; /* Light grey background */
+  color: #222; /* Dark grey text, easier to read than pure black */
+} /* Ends the body styles */
+
+header { /* Styles the top section */
+  background-color: #1f3a5f; /* Dark blue bar */
+  color: white; /* White text on the blue bar */
+  padding: 20px; /* Space inside the bar */
+} /* Ends the header styles */
+
+header h1 { /* Styles only the h1 inside the header */
+  margin: 0 0 10px 0; /* No space on top, 10px space below */
+} /* Ends the h1 styles */
+
+nav a { /* Styles every link inside the menu */
+  color: white; /* White link text */
+  text-decoration: none; /* Removes the underline */
+  margin-right: 15px; /* Space between the links */
+} /* Ends the link styles */
+
+nav a:hover { /* Styles a link when the mouse is over it */
+  text-decoration: underline; /* Shows an underline on hover */
+} /* Ends the hover styles */
+
+main { /* Styles the main content area */
+  padding: 20px; /* Space inside the content area */
+} /* Ends the main styles */
+
+table { /* Styles the table */
+  width: 100%; /* Makes the table as wide as the page */
+  border-collapse: collapse; /* Joins the borders into single lines */
+  background-color: white; /* White table background */
+} /* Ends the table styles */
+
+th, td { /* Styles both heading cells and normal cells */
+  padding: 10px; /* Space inside each cell */
+  border: 1px solid #ccc; /* Thin light grey border */
+  text-align: left; /* Aligns text to the left */
+} /* Ends the cell styles */
+
+th { /* Styles only the heading cells */
+  background-color: #e3e9f0; /* Light blue-grey heading background */
+} /* Ends the heading cell styles */
+form { /* Styles the form */
+  display: flex; /* Puts the inputs in a row */
+  flex-wrap: wrap; /* Moves inputs to the next line on small screens */
+  gap: 10px; /* Space between the inputs */
+  margin-bottom: 10px; /* Space below the form */
+} /* Ends the form styles */
+
+input { /* Styles every text and number box */
+  padding: 8px; /* Space inside each box */
+  border: 1px solid #ccc; /* Thin light grey border */
+  border-radius: 4px; /* Slightly rounded corners */
+} /* Ends the input styles */
+
+button { /* Styles every button */
+  padding: 8px 16px; /* Space inside the button */
+  background-color: #1f3a5f; /* Same dark blue as the header */
+  color: white; /* White text */
+  border: none; /* Removes the default border */
+  border-radius: 4px; /* Slightly rounded corners */
+  cursor: pointer; /* Shows a hand when the mouse is over it */
+} /* Ends the button styles */
+
+button:hover { /* Styles a button when the mouse is over it */
+  background-color: #2d5287; /* A lighter blue on hover */
+} /* Ends the hover styles */
+
+#form-message { /* Styles the message line under the form */
+  min-height: 20px; /* Keeps space so the page does not jump */
+  margin-bottom: 20px; /* Space below the message */
+} /* Ends the message styles */
+td button { /* Styles buttons inside table cells */
+  margin-right: 6px; /* Space between Edit and Delete */
+} /* Ends the cell button styles */
+.dashboard { /* Styles the row that holds the four boxes */
+  display: flex; /* Puts the boxes side by side */
+  flex-wrap: wrap; /* Moves boxes to the next line on small screens */
+  gap: 15px; /* Space between the boxes */
+  margin-bottom: 30px; /* Space below the whole row */
+} /* Ends the dashboard styles */
+
+.stat-card { /* Styles one box */
+  flex: 1; /* Makes all four boxes share the width equally */
+  min-width: 150px; /* Stops a box from getting too narrow */
+  background-color: white; /* White background */
+  border-left: 5px solid #1f3a5f; /* Dark blue stripe on the left side */
+  border-radius: 4px; /* Slightly rounded corners */
+  padding: 15px 20px; /* Space inside the box */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* A soft shadow under the box */
+} /* Ends the box styles */
+
+.stat-card h3 { /* Styles the big number in each box */
+  margin: 0; /* Removes the default space around it */
+  font-size: 32px; /* Makes the number large */
+  color: #1f3a5f; /* Dark blue, same as the header */
+} /* Ends the number styles */
+
+.stat-card p { /* Styles the label in each box */
+  margin: 5px 0 0 0; /* Small space above, none elsewhere */
+  color: #555; /* Medium grey text */
+} /* Ends the label styles */
+html { /* Styles the whole page */
+  scroll-behavior: smooth; /* Makes the page glide to a section instead of jumping */
+} /* Ends the html styles */
+
+header { /* Styles the top bar, adding to your earlier header styles */
+  position: sticky; /* Keeps the bar at the top while you scroll */
+  top: 0; /* Sticks it to the very top edge */
+  z-index: 10; /* Keeps the bar above the other content */
+} /* Ends the header styles */
+
+h2, .dashboard { /* Styles the headings and the dashboard boxes */
+  scroll-margin-top: 130px; /* Leaves space so the sticky bar does not cover the section you jump to */
+} /* Ends the scroll margin styles */
+nav a.active { /* Styles the menu link of the page you are on. React Router adds the class "active" by itself */
+  font-weight: bold; /* Makes the current link bold */
+  border-bottom: 2px solid white; /* Draws a white line under the current link */
+  padding-bottom: 4px; /* Space between the text and the line */
+} /* Ends the active link styles */
+
+nav a { /* Adds to your earlier link styles */
+  display: inline-block; /* Lets the link have padding and a line under it */
+} /* Ends the link styles */
+
+select { /* Styles the dropdown boxes, which your old CSS did not cover */
+  padding: 8px; /* Space inside each dropdown */
+  border: 1px solid #ccc; /* Thin light grey border, same as the text boxes */
+  border-radius: 4px; /* Slightly rounded corners */
+  background-color: white; /* White background */
+} /* Ends the dropdown styles */
+
+main { /* Adds to your earlier main styles */
+  max-width: 1200px; /* Stops the content from stretching too wide on big screens */
+  margin: 0 auto; /* Centers the content on the page */
+} /* Ends the main styles */
+
+table { /* Adds to your earlier table styles */
+  margin-bottom: 30px; /* Space below each table */
+} /* Ends the table styles */
+
+h2 { /* Styles every page heading */
+  margin-top: 25px; /* Space above each heading */
+  color: #1f3a5f; /* Dark blue, same as the header */
+} /* Ends the heading styles */
+body { /* Styles the whole page, adding to the earlier body styles */
+  font-size: 18px; /* Makes the normal text bigger. It was about 16px */
+} /* Ends the body styles */
+
+header h1 { /* Styles the main title in the blue bar */
+  font-size: 34px; /* Makes the title bigger */
+} /* Ends the title styles */
+
+nav a { /* Styles the menu links */
+  font-size: 19px; /* Makes the menu text bigger */
+  margin-right: 22px; /* More space between the links */
+} /* Ends the link styles */
+
+h2 { /* Styles every page heading */
+  font-size: 28px; /* Makes the headings bigger */
+} /* Ends the heading styles */
+
+th, td { /* Styles every table cell */
+  font-size: 17px; /* Makes the table text bigger */
+  padding: 12px; /* A little more space inside each cell */
+} /* Ends the cell styles */
+
+input, select, button { /* Styles the boxes and buttons. They ignore the page font size unless told */
+  font-size: 16px; /* Makes the text inside them bigger */
+  font-family: inherit; /* Uses the same font as the rest of the page */
+} /* Ends the form control styles */
+
+.dashboard { /* Styles the row that holds the four boxes */
+  display: grid; /* Uses a grid, which keeps the boxes in clean columns */
+  grid-template-columns: repeat(4, 1fr); /* Four equal columns, so all four boxes sit in one row */
+  gap: 20px; /* Space between the boxes */
+} /* Ends the dashboard styles */
+
+.stat-card { /* Styles one box */
+  min-width: 0; /* Lets a box shrink so the row never breaks */
+} /* Ends the box styles */
+
+.stat-card h3 { /* Styles the big number in each box */
+  font-size: 42px; /* Makes the numbers bigger */
+} /* Ends the number styles */
+
+.stat-card p { /* Styles the label in each box */
+  font-size: 18px; /* Makes the label bigger */
+} /* Ends the label styles */
+
+@media (max-width: 800px) { /* Applies only on narrow screens, like a phone */
+  .dashboard { /* Styles the row on narrow screens */
+    grid-template-columns: repeat(2, 1fr); /* Two boxes per row, so they stay readable */
+  } /* Ends the dashboard styles */
+} /* Ends the narrow screen rules */
+
+@media (max-width: 600px) { /* Applies only on phone-sized screens */
+  .dashboard { /* Styles the dashboard row on phones */
+    grid-template-columns: 1fr; /* One box per row, so the boxes form a column */
+  } /* Ends the dashboard styles */
+} /* Ends the phone rules */
+.quote { /* Styles the quote box */
+  margin: 40px auto 0 auto; /* Space above, and centers the box */
+  max-width: 700px; /* Keeps the text from stretching too wide */
+  padding: 30px 35px; /* Space inside the box */
+  background-color: rgba(255, 255, 255, 0.75); /* White with some transparency, so the book pattern shows faintly */
+  border-radius: 8px; /* Rounded corners */
+  text-align: center; /* Centers the text */
+} /* Ends the quote box styles */
+
+.quote p { /* Styles the quote text */
+  margin: 0 0 12px 0; /* Small space below the text */
+  font-size: 26px; /* Large, easy to read */
+  font-style: italic; /* Slanted text, the usual look for a quote */
+  color: #1f3a5f; /* Dark blue, same as the header */
+  line-height: 1.5; /* Space between lines */
+} /* Ends the quote text styles */
+
+.quote footer { /* Styles the author line */
+  font-size: 18px; /* Smaller than the quote */
+  color: #555; /* Medium grey */
+} /* Ends the author styles */
+.app::before { /* Creates the background layer behind each page */
+  content: ""; /* A layer must have content, even an empty one */
+  position: fixed; /* Keeps the layer in place while you scroll */
+  inset: 0; /* Stretches the layer over the full screen */
+  z-index: -1; /* Puts the layer behind all the page content */
+  pointer-events: none; /* Lets clicks pass through the layer */
+  opacity: 0.18; /* The transparency. Lower is fainter */
+  background-size: cover; /* Makes the image fill the whole screen */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Shows the image once */
+} /* Ends the background layer styles */
+
+.bg-dashboard::before { /* Background for the Dashboard page */
+  background-image: url("/images/library1.jpg"); /* Image 1 */
+} /* Ends the Dashboard background */
+
+.bg-books::before { /* Background for the Books page */
+  background-image: url("/images/library2.jpg"); /* Image 2 */
+} /* Ends the Books background */
+
+.bg-members::before { /* Background for the Members page */
+  background-image: url("/images/library3.jpg"); /* Image 3 */
+} /* Ends the Members background */
+
+.bg-transactions::before { /* Background for the Transactions page */
+  background-image: url("/images/library4.jpg"); /* Your new image */
+} /* Ends the Transactions background */
