@@ -1,5 +1,5 @@
 const Book = require("../models/Book"); // Loads the Book model so we can use the database
-
+const Transaction = require("../models/Transaction"); // Loads the Transaction model, to check for issued copies before deleting
 const getBooks = async (req, res) => { // Function to get all books. req is the request, res is the reply
   try { // Try to run the code below
     const books = await Book.find(); // Asks MongoDB for every book and waits for the answer
@@ -59,8 +59,13 @@ const updateBook = async (req, res) => { // Function to edit an existing book
 }; // Ends the function
 const deleteBook = async (req, res) => { // Function to delete a book
   try { // Try to run the code below
+    const issuedCount = await Transaction.countDocuments({ bookId: req.params.id, status: "issued" }); // Counts the copies of this book that are still out
+    if (issuedCount > 0) { // Checks if any copy has not come back
+      return res.status(400).json({ message: `${issuedCount} copy(ies) of this book are still issued. Return them first.` }); // Blocks the delete and says how many are out
+    } // Ends the check
+
     const book = await Book.findByIdAndDelete(req.params.id); // Finds the book by id and removes it
-    if (!book) { // Checks if no book was found with that id
+    if (!book) { // Checks if no book was found
       return res.status(404).json({ message: "Book not found" }); // 404 means not found
     } // Ends the check
     res.status(200).json({ message: "Book deleted" }); // Confirms the deletion
@@ -68,5 +73,4 @@ const deleteBook = async (req, res) => { // Function to delete a book
     res.status(400).json({ message: error.message }); // Sends the reason back
   } // Ends the catch block
 }; // Ends the function
-
 module.exports = { getBooks, addBook, updateBook, deleteBook }; // Shares the four functions with other files

@@ -12,6 +12,12 @@ const transactionSchema = new mongoose.Schema( // The blueprint of a transaction
       ref: "Member", // Says this id points to a document in the Member collection
       required: [true, "Member is required"], // A transaction cannot be saved without a member
     }, // Ends the memberId field
+        bookTitle: { // A saved copy of the book's title, kept even if the book is deleted later
+      type: String, // The value must be text
+    }, // Ends the bookTitle field
+    memberName: { // A saved copy of the member's name, kept even if the member is deleted later
+      type: String, // The value must be text
+    }, // Ends the memberName field
     issueDate: { // The date the book was given out
       type: Date, // The value must be a date
       default: Date.now, // If no date is sent, today's date is used

@@ -20,7 +20,7 @@ const issueBook = async (req, res) => { // Function to give a book to a member
       return res.status(400).json({ message: "No copies available" }); // Rejects the request
     } // Ends the check
 
-    const transaction = await Transaction.create({ bookId, memberId }); // Saves the new transaction. Status becomes "issued" by default
+   const transaction = await Transaction.create({ bookId, memberId, bookTitle: book.title, memberName: member.name }); // Saves the transaction with a copy of the title and name. Status becomes "issued" by default
     book.availableQuantity -= 1; // Reduces the available copies by one
     await book.save(); // Saves the updated book in the database
 

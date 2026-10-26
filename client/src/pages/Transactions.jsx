@@ -124,10 +124,10 @@ function Transactions() { // The Transactions page component
             transactions.map((t) => ( // Returns one row for every transaction
               <tr key={t._id}>
                 {/* One row. key is the transaction's id */}
-                <td>{t.bookId ? t.bookId.title : "Deleted book"}</td>
-                {/* Shows the title, or a note if the book was deleted */}
-                <td>{t.memberId ? t.memberId.name : "Deleted member"}</td>
-                {/* Shows the name, or a note if the member is gone */}
+                <td>{t.bookId ? t.bookId.title : t.bookTitle ? `${t.bookTitle} (deleted)` : "Deleted book"}</td>
+                {/* Shows the live title. If the book is gone, shows the saved title with "(deleted)". Old rows with no saved title show "Deleted book" */}
+                <td>{t.memberId ? t.memberId.name : t.memberName ? `${t.memberName} (deleted)` : "Deleted member"}</td>
+                {/* The same idea for the member's name */}
                 <td>{new Date(t.issueDate).toLocaleDateString()}</td>
                 {/* The issue date in a readable form */}
                 <td>{t.returnDate ? new Date(t.returnDate).toLocaleDateString() : "-"}</td>
